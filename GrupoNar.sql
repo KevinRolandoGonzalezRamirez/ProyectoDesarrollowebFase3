@@ -8,3 +8,21 @@ idPrueba int,
 descripcion varchar(65),
 primary key (idPrueba)
 );
+
+-- Grupo #0
+
+-- Alumno
+-- tabla alumnos
+create table alumnos(
+idAlumno int,
+nombreAlumno varchar(65),
+
+primary key(idAlumno)
+);
+
+create table materias(
+idMateria int,
+nombre varchar(65),
+
+primary key (idMateria)
+);
