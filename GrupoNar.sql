@@ -1,4 +1,6 @@
+-- drop database grupoNar
 create database grupoNar;
+use grupoNar;
 
 -- Grupo de ficitio 
 
@@ -75,3 +77,71 @@ ALTER TABLE `membresia`
 ALTER TABLE `membresia`
   ADD CONSTRAINT `membresia_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`);
 COMMIT;
+
+-- Grupo #4
+-- PROVEEDORES
+-- tabla marca
+create table marca (
+idMarca int auto_increment,
+nombreMarca varchar(65),
+estado int, 
+
+primary key (idMarca)
+);
+
+-- tabla producto
+create table producto(
+idProducto int auto_increment,
+nombre varchar(65),
+descripcion varchar(65),
+modelo varchar(65),
+costo float,
+estado int, -- 1-activo,0-Inactivo
+
+idMarca int, -- foranea con marca
+idCompra int , -- foranea con compra
+
+primary key (idProducto)
+);
+
+
+-- tabla proveedor
+CREATE TABLE proveedor (
+    idProveedor INT AUTO_INCREMENT,
+    nombre VARCHAR(15),
+    tel VARCHAR(8),
+    direccion VARCHAR(20),
+    descripcion VARCHAR(65),
+    estado TINYINT,
+    
+    PRIMARY KEY (idProveedor)
+);
+
+-- COMPRAS
+-- tabla de compra
+create table compra(
+idCompra int auto_increment,
+fechaCompra varchar(20),  
+estado tinyint,
+
+-- foraneas
+idProveedor int, -- foranea de proveedor
+
+primary key (idCompra)
+);
+
+-- CONSTRAINS GRUPO #4
+ALTER TABLE `producto`
+ADD CONSTRAINT `fk_ProductoMarca` FOREIGN KEY (`idMarca`) REFERENCES `marca` (`idMarca`);
+
+ALTER TABLE `compra`
+ADD CONSTRAINT `fk_Compraproveedor` FOREIGN KEY (`idProveedor`) REFERENCES `proveedor` (`idProveedor`);
+
+ALTER TABLE `producto`
+ADD CONSTRAINT `fk_ProductoCompra` FOREIGN KEY (`idCompra`) REFERENCES `compra` (`idCompra`);
+
+
+
+
+
+
