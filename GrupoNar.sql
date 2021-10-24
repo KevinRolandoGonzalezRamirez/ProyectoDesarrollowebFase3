@@ -78,6 +78,41 @@ ALTER TABLE `membresia`
   ADD CONSTRAINT `membresia_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`);
 COMMIT;
 
+-- Grupo #2
+-- Rachel Barrios,Heydi Queme, Carol Monterroso, Kevin FLores, Danny Saldaña,Bill Chic 
+-- tabla promocion
+CREATE TABLE promocion (
+  idPromocion int(11) NOT NULL primary key,
+  nombrePromocion varchar(200) NOT NULL,
+  descripcionPromocion varchar(200) NOT NULL,
+  estadoPromocion varchar(200) NOT NULL,
+  descuento float,
+  fechaInicio date NOT NULL,
+  fechaFin date NOT NULL,
+  estado int not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- tabla tipo compañia
+CREATE TABLE tipoCompañia (
+  `idTipoCompañia` int(11) NOT NULL,
+  `nombreTipo` varchar(20) NOT NULL,
+  `estadoTipo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- tabla compañia
+CREATE TABLE compañia (
+  `idCompañia` int(11) NOT NULL,
+  `nombreCompañia` varchar(20) NOT NULL,
+  `idTipoCompañia` int(11) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `telefono` int(11) NOT NULL,
+  `correo` varchar(30) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
+  `estadoCompañia` int(11) NOT NULL,
+  foreign key (idTipoCompañia) references tipoCompañia (idTipoCompañia)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Grupo #4
 -- PROVEEDORES
 -- tabla marca
