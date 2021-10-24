@@ -141,7 +141,91 @@ ALTER TABLE `producto`
 ADD CONSTRAINT `fk_ProductoCompra` FOREIGN KEY (`idCompra`) REFERENCES `compra` (`idCompra`);
 
 
+-- GRUPO #6`
+-- tabla `capacitacion`
+CREATE TABLE `capacitacion` (
+  `idCapacitacion` int(8) NOT NULL,
+  `descripcion` varchar(40) NOT NULL,
+  `fechaIncio` date NOT NULL,
+  `fechaFinal` date NOT NULL,
+  `id_cliente` int(8) NOT NULL,
+  `idCapacitador` int(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- tabla `capacitador`
+CREATE TABLE `capacitador` (
+  `idCapacitador` int(8) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `correo` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- tabla `consultor`
+CREATE TABLE `consultor` (
+  `idConsultor` int(8) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `correo` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- tabla `consultoria`
+CREATE TABLE `consultoria` (
+  `idConsultoria` int(8) NOT NULL,
+  `descripcion` varchar(40) NOT NULL,
+  `fechaInicio` date NOT NULL,
+  `fechaFinal` date NOT NULL,
+  `id_cliente` int(8) NOT NULL,
+  `idConsultor` int(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Indices de la tabla `capacitacion`
+ALTER TABLE `capacitacion`
+  ADD PRIMARY KEY (`idCapacitacion`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `idCapacitador` (`idCapacitador`);
+
+-- Indices de la tabla `capacitador`
+ALTER TABLE `capacitador`
+  ADD PRIMARY KEY (`idCapacitador`);
+
+-- Indices de la tabla `consultor`
+ALTER TABLE `consultor`
+  ADD PRIMARY KEY (`idConsultor`);
+
+-- Indices de la tabla `consultoria`
+ALTER TABLE `consultoria`
+  ADD PRIMARY KEY (`idConsultoria`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `idConsultor` (`idConsultor`);
+
+-- AUTO_INCREMENT de la tabla `capacitacion`
+ALTER TABLE `capacitacion`
+  MODIFY `idCapacitacion` int(8) NOT NULL AUTO_INCREMENT;
+
+-- AUTO_INCREMENT de la tabla `capacitador`
+ALTER TABLE `capacitador`
+  MODIFY `idCapacitador` int(8) NOT NULL AUTO_INCREMENT;
+
+-- AUTO_INCREMENT de la tabla `consultor`
+ALTER TABLE `consultor`
+  MODIFY `idConsultor` int(8) NOT NULL AUTO_INCREMENT;
+
+-- AUTO_INCREMENT de la tabla `consultoria`
+ALTER TABLE `consultoria`
+  MODIFY `idConsultoria` int(8) NOT NULL AUTO_INCREMENT;
+
+-- Filtros para la tabla `capacitacion`
+ALTER TABLE `capacitacion`
+  ADD CONSTRAINT `capacitacion_ibfk_1` FOREIGN KEY (`idCapacitador`) REFERENCES `capacitador` (`idCapacitador`),
+  ADD CONSTRAINT `capacitacion_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`);
+
+-- Filtros para la tabla `consultoria`
+ALTER TABLE `consultoria`
+  ADD CONSTRAINT `consultoria_ibfk_1` FOREIGN KEY (`idConsultor`) REFERENCES `consultor` (`idConsultor`),
+  ADD CONSTRAINT `consultoria_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`);
 
 
 
