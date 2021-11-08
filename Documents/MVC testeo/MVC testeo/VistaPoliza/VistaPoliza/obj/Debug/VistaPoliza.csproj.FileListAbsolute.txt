@@ -1,0 +1,9 @@
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\bin\Debug\VistaPoliza.dll
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\bin\Debug\VistaPoliza.pdb
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\obj\Debug\VistaPoliza.csproj.AssemblyReference.cache
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\obj\Debug\VistaPoliza.csproj.CoreCompileInputs.cache
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\obj\Debug\VistaPoliza.dll
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\obj\Debug\VistaPoliza.pdb
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\bin\Debug\ControladorPoliza.dll
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\bin\Debug\ControladorPoliza.pdb
+J:\uni\CHSC\MVC testeo\VistaPoliza\VistaPoliza\obj\Debug\VistaPoliza.csproj.CopyComplete

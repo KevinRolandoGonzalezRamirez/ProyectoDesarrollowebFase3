@@ -1,0 +1,6 @@
+J:\uni\CHSC\MVC testeo\VistaPoliza\ModeloPoliza\bin\Debug\ModeloPoliza.dll
+J:\uni\CHSC\MVC testeo\VistaPoliza\ModeloPoliza\bin\Debug\ModeloPoliza.pdb
+J:\uni\CHSC\MVC testeo\VistaPoliza\ModeloPoliza\obj\Debug\ModeloPoliza.csproj.AssemblyReference.cache
+J:\uni\CHSC\MVC testeo\VistaPoliza\ModeloPoliza\obj\Debug\ModeloPoliza.csproj.CoreCompileInputs.cache
+J:\uni\CHSC\MVC testeo\VistaPoliza\ModeloPoliza\obj\Debug\ModeloPoliza.dll
+J:\uni\CHSC\MVC testeo\VistaPoliza\ModeloPoliza\obj\Debug\ModeloPoliza.pdb
